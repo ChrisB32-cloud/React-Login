@@ -70,7 +70,7 @@ function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar style={{ background: '#4c535c' }} position="static">
         <Toolbar>
           <IconButton
             edge="start"
@@ -82,9 +82,9 @@ function NavBar() {
             <span>☁</span>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            App Title
+            React Login
           </Typography>
-          <Switch />
+          <Switch style={{ color: 'black' }} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

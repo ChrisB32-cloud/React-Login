@@ -1,10 +1,11 @@
 import NavBar from './components/NavBar';
+import Form from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>Login React Context Api</h1> */}
       <NavBar />
+      <Form />
     </div>
   );
 }
