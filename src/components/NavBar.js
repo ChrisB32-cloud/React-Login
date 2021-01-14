@@ -23,8 +23,8 @@ class NavBar extends Component {
 
   render() {
     const { classes } = this.props;
-    const { isDarkMode } = this.context;
-    console.log(isDarkMode);
+    const { isDarkMode, toggleDarkMode } = this.context;
+    // console.log(isDarkMode);
 
     return (
       <div className={classes.root}>
@@ -46,7 +46,7 @@ class NavBar extends Component {
             <Typography className={classes.title} variant="h6" noWrap>
               React Login
             </Typography>
-            <Switch style={{ color: 'black' }} />
+            <Switch style={{ color: 'black' }} onClick={toggleDarkMode} />
             <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>

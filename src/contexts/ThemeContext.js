@@ -52,10 +52,18 @@ export class ThemeProvider extends Component {
     this.state = {
       isDarkMode: true
     };
+    this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }
+
+  toggleDarkMode() {
+    this.setState({ isDarkMode: !this.state.isDarkMode });
+  }
+
   render() {
     return (
-      <ThemeContext.Provider value={{ ...this.state, tasteLikeChicken: true }}>
+      <ThemeContext.Provider
+        value={{ ...this.state, toggleDarkMode: this.toggleDarkMode }}
+      >
         {this.props.children}
       </ThemeContext.Provider>
     );
