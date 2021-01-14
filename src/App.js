@@ -1,12 +1,16 @@
 import NavBar from './components/NavBar';
 import Form from './components/Form';
+import PageComponents from './components/PageComponents';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Form />
-    </div>
+    <ThemeProvider>
+      <PageComponents>
+        <NavBar />
+        <Form />
+      </PageComponents>
+    </ThemeProvider>
   );
 }
 

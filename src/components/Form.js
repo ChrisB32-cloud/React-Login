@@ -71,7 +71,7 @@ const Form = () => {
             <Input id="password" name="password" autoFocus />
           </FormControl>
           <FormControlLabel
-            control={<Checkbox color="primary" />}
+            control={<Checkbox color="default" />}
             label="Remember Me"
           />
           <Button
