@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
       width: 400,
       marginLeft: 'auto',
       marginRight: 'auto'
-    }
+    },
+    boxShadow: ' 0 30px 30px -6px black'
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
