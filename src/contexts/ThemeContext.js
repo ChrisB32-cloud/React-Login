@@ -36,6 +36,13 @@ import React, { Component, createContext } from 'react';
 // components that need access to the context, can consume it using
 // a context consumer, which there are a few ways of doing
 
+// - contextType
+//  - The contextType property on a class can be assigned a Context object created
+// by createContext(). This lets you consume the nearest current value
+// of that Context type using this.context. You can reference this in any
+// of the lifecycle methods including the render function.
+//  - NOTE: You can only subscribe to a single context using API.
+
 export const ThemeContext = createContext();
 
 export class ThemeProvider extends Component {

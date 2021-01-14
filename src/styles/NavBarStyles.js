@@ -1,14 +1,17 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
-
-const styles = makeStyles(theme => ({
+import { fade } from '@material-ui/core/styles/colorManipulator';
+const styles = theme => ({
   root: {
+    width: '100%',
+    marginBottom: 0
+  },
+  grow: {
     flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginLeft: -12,
+    marginRight: 20
   },
   title: {
-    flexGrow: 1,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
@@ -24,35 +27,36 @@ const styles = makeStyles(theme => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing.unit,
       width: 'auto'
     }
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    width: theme.spacing.unit * 9,
     height: '100%',
     position: 'absolute',
-    pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
   },
   inputRoot: {
-    color: 'inherit'
+    color: 'inherit',
+    width: '100%'
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingTop: theme.spacing.unit,
+    paddingRight: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    paddingLeft: theme.spacing.unit * 10,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: 120,
       '&:focus': {
-        width: '20ch'
+        width: 200
       }
     }
   }
-}));
+});
 
 export default styles;
