@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 class PageComponents extends Component {
+  static contextType = ThemeContext;
+
   render() {
+    const { isDarkMode } = this.context;
     const styles = {
-      backgroundColor: 'lightslategrey',
+      backgroundColor: isDarkMode ? 'grey' : 'lightslategrey',
       height: '100vh',
       width: '100vw'
     };

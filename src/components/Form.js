@@ -22,7 +22,7 @@ class Form extends Component {
       <main className={classes.main}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon style={{ backgroundColor: 'lightslategray' }} />
+            <LockOutlinedIcon style={{ backgroundColor: '#4c535c' }} />
           </Avatar>
           <Typography variant="h5">Sign In</Typography>
           <Select value="english">

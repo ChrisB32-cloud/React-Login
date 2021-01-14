@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { themeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -11,37 +11,53 @@ import Switch from '@material-ui/core/Switch';
 import SearchIcon from '@material-ui/icons/Search';
 import styles from '../styles/NavBarStyles';
 
+// - static contextType = ThemeContext;
+//  - What this tells the class to do is look up
+// and see if you're nested in a themeContext Provider. If you
+// find the nearest one.
+//  - We can have multiple context as well
+//  - It's going to look up the tree to find themeContext
+
 class NavBar extends Component {
+  static contextType = ThemeContext;
+
   render() {
     const { classes } = this.props;
+    const { isDarkMode } = this.context;
+    console.log(isDarkMode);
+
     return (
       <div className={classes.root}>
-        <AppBar style={{ background: '#4c535c' }} position="static">
+        <AppBar
+          style={{ background: isDarkMode ? '#818b8f' : '#4c535c' }}
+          position="static"
+        >
           <Toolbar>
             <IconButton
+              style={{ backgroundColor: '#4c535c' }}
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="open drawer"
             >
               {/* <MenuIcon /> */}
-              <span>☁</span>
+              <span>🇫🇷</span>
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
               React Login
             </Typography>
             <Switch style={{ color: 'black' }} />
+            <div className={classes.grow} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="Search…"
+                placeholder="Search..."
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
                 }}
-                inputProps={{ 'aria-label': 'search' }}
               />
             </div>
           </Toolbar>
