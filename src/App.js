@@ -2,14 +2,17 @@ import NavBar from './components/NavBar';
 import Form from './components/Form';
 import PageComponents from './components/PageComponents';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
   return (
     <ThemeProvider>
-      <PageComponents>
-        <NavBar />
-        <Form />
-      </PageComponents>
+      <LanguageProvider>
+        <PageComponents>
+          <NavBar />
+          <Form />
+        </PageComponents>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
