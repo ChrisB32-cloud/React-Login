@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { withLanguageContext } from '../contexts/LanguageContext';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -66,4 +67,4 @@ class NavBar extends Component {
   }
 }
 
-export default withStyles(styles)(NavBar);
+export default withLanguageContext(withStyles(styles)(NavBar));
