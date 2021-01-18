@@ -18,13 +18,30 @@ import styles from '../styles/NavBarStyles';
 //  - We can have multiple context as well
 //  - It's going to look up the tree to find themeContext
 
+const content = {
+  english: {
+    search: 'Search',
+    flag: '🇬🇧'
+  },
+  french: {
+    search: 'Chercher',
+    flag: '🇫🇷'
+  },
+  spanish: {
+    search: 'Buscar',
+    flag: '🇪🇸'
+  }
+};
+
 class NavBar extends Component {
   static contextType = ThemeContext;
 
   render() {
     const { classes } = this.props;
     const { isDarkMode, toggleDarkMode } = this.context;
-    // console.log(isDarkMode);
+    const { language } = this.props.languageContext;
+    const { search, flag } = content[language];
+    // console.log(language);
 
     return (
       <div className={classes.root}>
@@ -34,17 +51,18 @@ class NavBar extends Component {
         >
           <Toolbar>
             <IconButton
-              style={{ backgroundColor: '#4c535c' }}
+              // style={{ backgroundColor: '#4c535c' }}
+              style={{ background: isDarkMode ? '#818b8f' : '#4c535c' }}
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="open drawer"
             >
               {/* <MenuIcon /> */}
-              <span>🇫🇷</span>
+              <span> {flag} </span>
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              React Login
+              React Login {language}
             </Typography>
             <Switch style={{ color: 'black' }} onClick={toggleDarkMode} />
             <div className={classes.grow} />
@@ -53,7 +71,7 @@ class NavBar extends Component {
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="Search..."
+                placeholder={`${search}...`}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
